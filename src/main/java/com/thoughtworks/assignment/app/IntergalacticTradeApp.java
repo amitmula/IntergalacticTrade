@@ -1,4 +1,6 @@
-package com.thoughtworks.test;
+package com.thoughtworks.assignment.app;
+
+import com.thoughtworks.assignment.service.IntergalacticTrade;
 
 import java.util.Scanner;
 
@@ -9,6 +11,6 @@ public class IntergalacticTradeApp {
         IntergalacticTrade obj = new IntergalacticTrade();
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        System.out.println("Value is " + obj.romanToDecimal(input));
+//        System.out.println("Value is " + obj.romanToDecimal(input));
     }
 }

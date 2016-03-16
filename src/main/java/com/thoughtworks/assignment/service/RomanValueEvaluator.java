@@ -1,16 +1,12 @@
-package com.thoughtworks.test;
+package com.thoughtworks.assignment.service;
+
+import com.thoughtworks.assignment.api.RomanValue;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class IntergalacticTrade {
-    public enum RomanValue {
-        I(1), V(5), X(10), L(50), C(100), D(500), M(1000);
-        private int value;
-        private RomanValue(int value) {
-            this.value = value;
-        }
-    }
+public class RomanValueEvaluator {
+
     private static final int repeatThreshold = 3;
     private static final Character[] nonRepeating = {'D', 'L', 'V'};
     private static final Character[] repeating = {'I','V','X','M'};
@@ -41,7 +37,7 @@ public class IntergalacticTrade {
     private boolean checkRepetition(String romanNumber) {
         for(char repeatingNumeral :repeating){
             if(romanNumber.contains(new String(new char[repeatThreshold + 1]).replace("\0", String.valueOf(repeatingNumeral))))
-            return false;
+                return false;
         }
         return true;
     }
@@ -56,37 +52,37 @@ public class IntergalacticTrade {
 
                 switch (convertToDecimal) {
                     case 'M':
-                        decimal = processDecimal(RomanValue.M.value, lastNumber, decimal);
+                        decimal = processDecimal(RomanValue.M.getValue(), lastNumber, decimal);
                         lastNumber = 1000;
                         break;
 
                     case 'D':
-                        decimal = processDecimal(RomanValue.D.value, lastNumber, decimal);
+                        decimal = processDecimal(RomanValue.D.getValue(), lastNumber, decimal);
                         lastNumber = 500;
                         break;
 
                     case 'C':
-                        decimal = processDecimal(RomanValue.C.value, lastNumber, decimal);
+                        decimal = processDecimal(RomanValue.C.getValue(), lastNumber, decimal);
                         lastNumber = 100;
                         break;
 
                     case 'L':
-                        decimal = processDecimal(RomanValue.L.value, lastNumber, decimal);
+                        decimal = processDecimal(RomanValue.L.getValue(), lastNumber, decimal);
                         lastNumber = 50;
                         break;
 
                     case 'X':
-                        decimal = processDecimal(RomanValue.X.value, lastNumber, decimal);
+                        decimal = processDecimal(RomanValue.X.getValue(), lastNumber, decimal);
                         lastNumber = 10;
                         break;
 
                     case 'V':
-                        decimal = processDecimal(RomanValue.V.value, lastNumber, decimal);
+                        decimal = processDecimal(RomanValue.V.getValue(), lastNumber, decimal);
                         lastNumber = 5;
                         break;
 
                     case 'I':
-                        decimal = processDecimal(RomanValue.I.value, lastNumber, decimal);
+                        decimal = processDecimal(RomanValue.I.getValue(), lastNumber, decimal);
                         lastNumber = 1;
                         break;
                 }
