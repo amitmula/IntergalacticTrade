@@ -1,4 +1,4 @@
-package com.thoughtworks.assignment.service;
+package com.thoughtworks.assignment.solutions;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package com.thoughtworks.assignment.api;
+package com.thoughtworks.assignment.api.values;
 
 public class EarthMetal {
     String name;

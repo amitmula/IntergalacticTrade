@@ -1,7 +1,16 @@
 package com.thoughtworks.assignment.service;
 
-/**
- * Created by amit.k.mula on 16/3/16.
- */
+import com.thoughtworks.assignment.api.messages.output.OutputMessage;
+
 public class OutputMessageProcessor {
+
+    OutputMessage outputMessage;
+    public OutputMessageProcessor(OutputMessage message) {
+        this.outputMessage = message;
+    }
+
+    public String getOutputMessage() {
+        return outputMessage.getMessage();
+    }
+
 }
